@@ -14,14 +14,14 @@ export class EmailComponentComponent implements OnInit {
 
   ngOnInit() {}
   public email: any;
-  public Password: any;
-  onSubmit(formData: { valid: any; value: { email: string; Password: string; }; }) {
+  public password: any;
+  onSubmit(formData: { valid: any; value: { email: string; password: string; }; }) {
     
     if (formData.valid) {
       console.log(formData.value);
       this.authService.login(
         formData.value.email,
-        formData.value.Password
+        formData.value.password
       );
     }
   }
