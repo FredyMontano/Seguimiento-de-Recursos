@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <span class="h3">
+          Registro de Recursos para profesores
+        </span>
+        <button class="btn btn-dark" routerLink="/nueva-cosa">Crear nuevo Recurso</button>
+        <table class="table mt-5 table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre del recurso</th>
+              <th scope="col">Asignatura</th>
+              <th scope="col">Tipo de Recurso</th>
+              <th scope="col">contenido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td >Pera</td>
+              <td>2</td>
+              <td>
+                <li class="fas fa-edit fa-lg text-info" style="margin-right: 5px;"></li>
+                <li class="fas fa-trash-alt fa-lg text-danger"></li>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <ul>
+        <li class="text" *ngFor="let item of listaCosas | async">
+            {{item.NombreRecurso}} 
+        </li>
+        <li class="text" *ngFor="let item of listaCosas | async">
+            {{item.Asignatura}} 
+        </li>
+        <li class="text" *ngFor="let item of listaCosas | async">
+            {{item.TipoRecurso}} 
+        </li>
+        <li class="text" *ngFor="let item of listaCosas | async">
+            {{item.Contenido}} 
+        </li>
+       
+    </ul>
+      </div>
+    </div>
+    </div>
+    

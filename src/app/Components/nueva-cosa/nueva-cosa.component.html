@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container pt-4">
+      <div class="row">
+            <div class="col col-lg-6 offset-lg-3">
+                  <div class="card text-center">
+                        <div class="card-body">
+                              <h3>Agregar empleado</h3>
+                              <span style="color: black;" *ngIf="enviado && createCosa.invalid "> Todos los campos son
+                        requeridos. </span>
+                              <form action="" [formGroup]="createCosa" (ngSubmit)="agregarCosa()">
+                                    <div class="row">
+                                          <div class="col">
+                                                <input class="form-control" type="text" formControlName="NombreRecurso"
+                                    placeholder="Nombre">
+                                              </div>
+                                          <div class="col">
+                                                <input class="form-control" type="text" formControlName="Asignatura"
+                                    placeholder="Asignatura">
+                                              </div>
+                            <div class="col">
+                                                <input class="form-control" type="text" formControlName="TipoRecurso"
+                                    placeholder="Tipo de recurso">
+                                              </div>
+                                <div class="col">
+                                                    <input class="form-control" type="text" formControlName="Contenido" placeholder="Contenidp">
+                                                  </div>
+                                       
+                        </div>
+                                    <div class="mt-3">
+                                          <button type="text" class="btn btn-primary" style="margin-right: 5px;"        
+                                        routerLink="/lista-cosas">Volver</button>
+                                          <button type="submit" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                  </form>
+                            </div>
+                      </div>
+                </div>
+          </div>
+</div>
+
