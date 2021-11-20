@@ -17,6 +17,10 @@ import { ListaCosasComponent } from './Components/lista-cosas/lista-cosas.compon
 import { NuevaCosaComponent } from './Components/nueva-cosa/nueva-cosa.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { AuthService } from './auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { LecturaRecursoComponent } from './Components/lectura-recurso/lectura-recurso.component';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -42,7 +46,9 @@ const firebaseConfig = {
     ProfileComponentComponent,
     ListaCosasComponent,
     NuevaCosaComponent,
-    NavbarComponent
+    NavbarComponent,
+    LecturaRecursoComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,11 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    EditorModule
+
   ],
   //coloque el Authservice como en la imagen en providers
   providers: [AuthService],

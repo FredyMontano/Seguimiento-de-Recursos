@@ -7,6 +7,7 @@ import { EmailComponentComponent } from './email-component/email-component.compo
 import { ListaCosasComponent } from './Components/lista-cosas/lista-cosas.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { NuevaCosaComponent } from './Components/nueva-cosa/nueva-cosa.component';
+import { LecturaRecursoComponent } from './Components/lectura-recurso/lectura-recurso.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,8 +17,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponentComponent },
   { path: 'lista-cosas', component: ListaCosasComponent},
   { path: 'nav-bar', component: NavbarComponent},
-  { path: 'nueva-cosa', component: NuevaCosaComponent}
-
+  { path: 'nueva-cosa', component: NuevaCosaComponent},
+{ path: 'edita-cosa/:id', component: NuevaCosaComponent}, // Se reutiliza el mismo componente de NuevaCosa
+{ path: 'lectura-recurso/:id', component: LecturaRecursoComponent}
 ];
 
 @NgModule({
