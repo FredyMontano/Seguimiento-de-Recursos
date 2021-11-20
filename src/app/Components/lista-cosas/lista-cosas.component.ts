@@ -96,6 +96,7 @@ export class ListaCosasComponent implements OnInit {
                 if(NombreA ===this.asignaturas[key]['nombre']){
                  let objIndex = this.asignaturas.findIndex((obj => obj.nombre === NombreA));
                  this.asignaturas[objIndex].cantidad +=1;
+                 console.log("cambio");
                  
                 }
               }
