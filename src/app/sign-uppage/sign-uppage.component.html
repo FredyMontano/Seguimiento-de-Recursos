@@ -1,9 +1,50 @@
-<div class="form-container">
-    <a routerLink="/login" id="goback">Login</a>
-    <h2>Sign Up</h2>
-    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
-      <input type="text" placeholder="Email address" (ngModel)="email" name="email" class="input-txt" required>
-      <input type="password" placeholder="Password" (ngModel)="password" name="password" class="input-txt" required>
-      <button type="submit" [disabled]="!formData.valid" class="auth-btn">Create Account</button>
-    </form>
-  </div>
+<div class="overlay">
+  <a routerLink="/login" id="goback">Login</a>
+  <form #formData='ngForm' (ngSubmit)='onSubmit(formData)'>
+    <div class="con">
+      <header class="head-form">
+        <h2>Registro de usuario</h2>
+        <p>registro su usuario aquí con un correo y contraseña</p>
+      </header>
+      <br>
+      <div class="field-set">
+        <span class="input-item">
+          <i class="fa fa-user-circle"></i>
+        </span>
+        <div class="form-group">
+          <input class="form-control" id="txt-input" type="text" placeholder="Email address" (ngModel)="email"
+            name="email" class="input-txt" required>
+        </div>
+        <br>
+        <span class="input-item">
+          <i class="fa fa-key"></i>
+        </span>
+        <div class="form-group">
+          <input class="form-control" type="password" placeholder="Password" id="pwd" name="password"
+            placeholder="Password" (ngModel)="password" name="password" class="input-txt" required>
+        </div>
+
+        <span>
+        </span>
+
+
+        <br>
+        <!--        buttons -->
+        <!--      button LogIn -->
+        <button class="log-in" type="submit" [disabled]="!formData.valid">Crear usuario</button>
+
+      </div>
+
+      <!--   other buttons -->
+      <div class="other">
+        <!--      Forgot Password button-->
+        <a routerLink="/signup" routerLinkActive="active" class="create-account-txt">¿No tienes cuenta? <strong>Crea una
+            aqui</strong></a>
+      </div>
+
+      <!--   End Conrainer  -->
+    </div>
+
+    <!-- End Form -->
+  </form>
+</div>

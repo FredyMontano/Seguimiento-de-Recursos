@@ -9,21 +9,14 @@
                         requeridos. </span>
                               <form action="" [formGroup]="createCosa" (ngSubmit)="agregarCosa()">
                                     <div class="row">
-                                          <div class="col">
                                                 <input class="form-control" type="text" formControlName="NombreRecurso"
                                     placeholder="Nombre">
-                                              </div>
-                                          <div class="col">
-                                               
+                                             
+                                   
                                     <select class="form-select" formControlName="Asignatura"  id=""><option value="{{item.id}}" *ngFor="let item of listaAsignaturas">{{item.Nombre}}</option></select>
-                                              </div>
-                            <div class="col">
                                                 <input class="form-control" type="text" formControlName="TipoRecurso"
                                     placeholder="Tipo de recurso">
-                                              </div>
-                                <div class="col">
                                                     <input class="form-control" type="text"  placeholder="Contenido">
-                                    <h1>TinyMCE 5 Angular Demo</h1>
                                     <editor
                                     formControlName="Contenido"
                                       [init]="{
@@ -40,7 +33,7 @@
                                           bullist numlist outdent indent | removeformat | help'
                                       }"
                                     ></editor>
-                                                  </div>
+                                                 
                                        
                         </div>
                                     <div class="mt-3">

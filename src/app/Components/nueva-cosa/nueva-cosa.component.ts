@@ -6,19 +6,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
-    
+
     selector: 'app-nueva-cosa',
     templateUrl: './nueva-cosa.component.html',
     styleUrls: ['./nueva-cosa.component.css']
 })
 export class NuevaCosaComponent implements OnInit {
-    titulo: string = 'Nueva cosa';
+    titulo: string = 'Nuevo Recurso';
     id: string | null;
     createCosa: FormGroup;
     enviado = false;
     listaAsignaturas: Observable<any[]> | any;
-    
-   
+
+
 
     constructor(private fb: FormBuilder, private cosaService: CosasService, private toastr: ToastrService,private router: Router, private aRoute: ActivatedRoute) {
         this.id = this.aRoute.snapshot.paramMap.get('id');
@@ -27,9 +27,9 @@ export class NuevaCosaComponent implements OnInit {
             Asignatura: ['', Validators.required],
             TipoRecurso: ['', Validators.required],
             Contenido: ['', Validators.required],
-            
+
         }
-        
+
         );
     }
     ngOnInit(): void {
@@ -38,11 +38,11 @@ export class NuevaCosaComponent implements OnInit {
     }
     agregarCosa() {
         this.enviado = true;
-    
+
         if (this.createCosa.invalid) {
           return;
         }
-    
+
         if (this.id === null) { /** NUEVA COSA */
           const cosa: any = {
             Nombre: this.createCosa.value.NombreRecurso,
@@ -51,7 +51,7 @@ export class NuevaCosaComponent implements OnInit {
             Contenido: this.createCosa.value.Contenido
 
           }
-    
+
           this.cosaService.agregarCosa(cosa).then(() => {
             console.log("registro exitoso");
             this.toastr.success('La cosa se agregó con éxito a la BD.', 'Cosa registrada', {
@@ -77,7 +77,7 @@ export class NuevaCosaComponent implements OnInit {
           this.router.navigate(['lista-cosas']);
         }
       }//cierra agregar cosa
-    
+
     esEditar() {
         if (this.id !== null) {
           this.titulo = 'Editar Recurso';
@@ -90,7 +90,7 @@ export class NuevaCosaComponent implements OnInit {
             });
           });
         } else {
-  
+
         }
       }
       getAsignatura() {
@@ -110,6 +110,6 @@ export class NuevaCosaComponent implements OnInit {
           }
         );
       }
-  
+
 }
 
